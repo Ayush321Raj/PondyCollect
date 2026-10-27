@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Account — PondyCollect</title>
+    <meta name="description" content="Register an employee or administrator account for PondyCollect.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand-logo">
+                <div class="brand-icon">🛍️</div>
+                <div class="brand-name">Pondy<span>Collect</span></div>
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#shop" class="nav-link">Shop</a></li>
+                    <li><a href="login.html" class="nav-link">Sign In</a></li>
+                    <li><a href="register.html" class="btn btn-primary btn-sm">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Registration Content -->
+    <main class="auth-wrapper">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="badge badge-employee" style="margin-bottom: 0.75rem;">Account Setup</div>
+                <h1>Join PondyCollect</h1>
+                <p>Create your internal staff or administrative credentials</p>
+            </div>
+
+            <!-- Academic Note -->
+            <div class="academic-note">
+                <span style="font-size: 1.25rem;">ℹ️</span>
+                <div>
+                    <strong>IWT Lab Demonstration Notice:</strong> In a real-world company, administrative accounts cannot be freely self-assigned. For this laboratory project, role selection is enabled to demonstrate dual Role-Based Access Control (RBAC).
+                </div>
+            </div>
+
+            <!-- Alerts -->
+            <div class="alert alert-error" id="register-error-alert" role="alert"></div>
+            <div class="alert alert-success" id="register-success-alert" role="alert"></div>
+
+            <!-- Form -->
+            <form id="register-form" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name *</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Ramesh Kumar" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="ramesh@pondycollect.com" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password *</label>
+                        <div class="password-input-wrap">
+                            <input type="password" id="password" name="password" class="form-input" placeholder="At least 6 characters" minlength="6" required>
+                            <button type="button" class="password-toggle-btn" onclick="togglePassword('password', this)" aria-label="Toggle password visibility">👁️</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword" class="form-label">Confirm Password *</label>
+                        <div class="password-input-wrap">
+                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="Re-enter password" minlength="6" required>
+                            <button type="button" class="password-toggle-btn" onclick="togglePassword('confirmPassword', this)" aria-label="Toggle confirm password visibility">👁️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="role" class="form-label">System Role *</label>
+                    <select id="role" name="role" class="form-select" required>
+                        <option value="" disabled selected>Select your account role...</option>
+                        <option value="employee">Employee (Staff Access & Admin Directory)</option>
+                        <option value="admin">Administrator (Executive Access & Employee Directory)</option>
+                    </select>
+                    <p class="form-hint">Selected role determines dashboard views and server permissions.</p>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="department" class="form-label">Department *</label>
+                        <input type="text" id="department" name="department" class="form-input" placeholder="e.g. Inventory, IT, Operations" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="designation" class="form-label">Designation *</label>
+                        <input type="text" id="designation" name="designation" class="form-input" placeholder="e.g. Senior Catalog Specialist" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 98765 43210">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="register-submit-btn" style="margin-top: 0.75rem;">
+                    <span id="register-btn-text">Create Account</span>
+                </button>
+            </form>
+
+            <div class="auth-footer-text">
+                Already have an account? <a href="login.html">Sign in here</a> • <a href="index.html">Back to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-bottom" style="border: none;">
+            <div>© 2026 PondyCollect Inc. — IWT Lab Demonstration</div>
+            <div><a href="login.html" style="color: #94A3B8; text-decoration: none;">Internal Staff Portal</a></div>
+        </div>
+    </footer>
+
+    <script src="js/register.js"></script>
+</body>
+</html>

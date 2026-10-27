@@ -1,0 +1,27 @@
+{
+  "name": "pondycollect",
+  "version": "1.0.0",
+  "description": "Online Item-Selling Company with Role-Based Access Control - MCA IWT Lab Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "pondycollect",
+    "ecommerce",
+    "iwt-lab",
+    "express",
+    "mysql",
+    "role-based-access"
+  ],
+  "author": "PondyCollect Team",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mysql2": "^3.9.7"
+  }
+}

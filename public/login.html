@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In — PondyCollect</title>
+    <meta name="description" content="Sign in to your PondyCollect employee or admin dashboard.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand-logo">
+                <div class="brand-icon">🛍️</div>
+                <div class="brand-name">Pondy<span>Collect</span></div>
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="index.html#shop" class="nav-link">Shop</a></li>
+                    <li><a href="login.html" class="nav-link active">Sign In</a></li>
+                    <li><a href="register.html" class="btn btn-primary btn-sm">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login Content -->
+    <main class="auth-wrapper">
+        <div class="auth-card auth-card-sm">
+            <div class="auth-header">
+                <div class="badge badge-sale" style="margin-bottom: 0.75rem;">Staff & Admin</div>
+                <h1>Welcome Back</h1>
+                <p>Enter your verified credentials to access your dashboard</p>
+            </div>
+
+            <!-- Alerts -->
+            <div class="alert alert-error" id="login-error-alert" role="alert"></div>
+            <div class="alert alert-success" id="login-success-alert" role="alert"></div>
+
+            <!-- Login Form -->
+            <form id="login-form" novalidate>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address *</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="e.g. yourname@pondycollect.com" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password *</label>
+                    <div class="password-input-wrap">
+                        <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required autocomplete="current-password">
+                        <button type="button" class="password-toggle-btn" onclick="togglePassword('password', this)" aria-label="Toggle password visibility">👁️</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="login-submit-btn" style="margin-top: 1rem;">
+                    <span id="login-btn-text">Sign In</span>
+                </button>
+            </form>
+
+            <!-- Quick Demo Credentials for Lab Evaluators -->
+            <div class="quick-login-box">
+                <div class="quick-login-title">
+                    <span>⚡ Quick Lab Credentials</span>
+                    <span style="font-size: 0.75rem; color: #94A3B8;">Click to auto-fill</span>
+                </div>
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                    <button type="button" class="quick-btn" onclick="fillCredentials('john.doe@pondycollect.com', 'Password@123')">
+                        👤 Fill Employee (John)
+                    </button>
+                    <button type="button" class="quick-btn" onclick="fillCredentials('alex.admin@pondycollect.com', 'Password@123')">
+                        🛡️ Fill Admin (Alex)
+                    </button>
+                </div>
+            </div>
+
+            <div class="auth-footer-text">
+                Don't have an account? <a href="register.html">Register here</a> • <a href="index.html">Back to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-bottom" style="border: none;">
+            <div>© 2026 PondyCollect Inc. — IWT Lab Demonstration</div>
+            <div>Secure Session Authentication</div>
+        </div>
+    </footer>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

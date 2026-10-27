@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PondyCollect — Discover More. Collect Better.</title>
+    <meta name="description" content="PondyCollect is a modern online marketplace for electronics, fashion, home essentials, and lifestyle collections.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Main Navigation Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand-logo" id="brand-logo-link">
+                <div class="brand-icon">🛍️</div>
+                <div class="brand-name">Pondy<span>Collect</span></div>
+            </a>
+
+            <nav>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="#shop" class="nav-link">Shop</a></li>
+                    <li><a href="#categories" class="nav-link">Categories</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="login.html" class="nav-link" id="nav-login-link">Sign In</a></li>
+                    <li><a href="register.html" class="btn btn-primary btn-sm" id="nav-register-btn">Register</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-icon-btn" id="cart-btn" aria-label="Shopping Cart">
+                    🛒
+                    <span class="cart-badge" id="cart-counter">0</span>
+                </button>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <div class="hero-text-wrap">
+                <div class="hero-tag">✨ Season 2026 Collection Live</div>
+                <h1 class="hero-title">Discover Products <br><span>You'll Love</span></h1>
+                <p class="hero-subtitle">
+                    Explore everyday essentials, trending collections, and smart choices at PondyCollect. Crafted for modern lifestyle enthusiasts.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#shop" class="btn btn-primary" id="hero-explore-btn">Explore Collection</a>
+                    <a href="register.html" class="btn btn-outline" id="hero-create-btn">Create Account</a>
+                </div>
+            </div>
+
+            <div class="hero-banner-card">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+                    <span class="badge badge-sale">FEATURED DROP</span>
+                    <span style="font-size: 0.85rem; color: #94A3B8;">Verified Quality</span>
+                </div>
+                <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; color: #FFFFFF;">Curated Everyday Gear</h2>
+                <p style="color: #CBD5E1; font-size: 0.92rem; line-height: 1.5;">
+                    Hand-picked electronics, apparel, and home additions backed by verified reviews and fast courier dispatch.
+                </p>
+                <div class="hero-stats-grid">
+                    <div>
+                        <div class="hero-stat-number">5,200+</div>
+                        <div class="hero-stat-label">Items Listed</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-number">99.8%</div>
+                        <div class="hero-stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Explore By Category</span>
+                <h2 class="section-title">Shop Your Favorite Departments</h2>
+                <p class="section-desc">Browse through carefully structured categories tailored to satisfy your daily home, work, and lifestyle needs.</p>
+            </div>
+
+            <div class="categories-grid">
+                <a href="#shop" class="category-card" onclick="filterCategory('Electronics')">
+                    <div class="category-icon">🎧</div>
+                    <h3 class="category-name">Electronics</h3>
+                    <span class="category-count">140+ Items</span>
+                </a>
+
+                <a href="#shop" class="category-card" onclick="filterCategory('Fashion')">
+                    <div class="category-icon">👕</div>
+                    <h3 class="category-name">Fashion</h3>
+                    <span class="category-count">280+ Items</span>
+                </a>
+
+                <a href="#shop" class="category-card" onclick="filterCategory('Home Essentials')">
+                    <div class="category-icon">🏠</div>
+                    <h3 class="category-name">Home Essentials</h3>
+                    <span class="category-count">190+ Items</span>
+                </a>
+
+                <a href="#shop" class="category-card" onclick="filterCategory('Accessories')">
+                    <div class="category-icon">⌚</div>
+                    <h3 class="category-name">Accessories</h3>
+                    <span class="category-count">95+ Items</span>
+                </a>
+
+                <a href="#shop" class="category-card" onclick="filterCategory('Beauty & Personal Care')">
+                    <div class="category-icon">✨</div>
+                    <h3 class="category-name">Beauty & Care</h3>
+                    <span class="category-count">120+ Items</span>
+                </a>
+
+                <a href="#shop" class="category-card" onclick="filterCategory('Books')">
+                    <div class="category-icon">📚</div>
+                    <h3 class="category-name">Books</h3>
+                    <span class="category-count">85+ Items</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="section" id="shop" style="background-color: #FFFFFF; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Trending Picks</span>
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-desc">Discover our best-selling goods selected for durability, aesthetic appeal, and exceptional value.</p>
+            </div>
+
+            <div class="products-grid" id="products-container">
+                <!-- Product Card 1 -->
+                <div class="product-card" data-category="Electronics">
+                    <div class="product-image-wrap">
+                        <span class="product-graphic">🎧</span>
+                        <div class="product-badge-wrap">
+                            <span class="badge badge-sale">SALE -20%</span>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-category">Electronics</div>
+                        <h3 class="product-title">SonicShield Pro Wireless ANC Headphones</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.8 (342 reviews)</span>
+                        </div>
+                        <div class="product-pricing">
+                            <span class="current-price">₹4,999</span>
+                            <span class="original-price">₹6,299</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-sm" onclick="addToCart('SonicShield Pro Headphones', 4999)">Add to Cart</button>
+                            <button class="btn btn-outline-dark btn-sm" onclick="showProductDetails('SonicShield Pro Headphones', 'Electronics', 4999, 'Active noise cancellation with 40-hour battery life and ultra-comfortable memory foam ear cushions.')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card" data-category="Fashion">
+                    <div class="product-image-wrap">
+                        <span class="product-graphic">🎒</span>
+                        <div class="product-badge-wrap">
+                            <span class="badge badge-sale">TRENDING</span>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-category">Fashion</div>
+                        <h3 class="product-title">Artisan Waxed Canvas Travel Weekender</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.6 (188 reviews)</span>
+                        </div>
+                        <div class="product-pricing">
+                            <span class="current-price">₹3,299</span>
+                            <span class="original-price">₹4,199</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-sm" onclick="addToCart('Waxed Canvas Travel Duffel', 3299)">Add to Cart</button>
+                            <button class="btn btn-outline-dark btn-sm" onclick="showProductDetails('Waxed Canvas Travel Duffel', 'Fashion', 3299, 'Water-resistant heavy cotton canvas with genuine full-grain leather straps and heavy brass hardware.')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card" data-category="Accessories">
+                    <div class="product-image-wrap">
+                        <span class="product-graphic">⌚</span>
+                        <div class="product-badge-wrap">
+                            <span class="badge badge-sale">PREMIUM</span>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-category">Accessories</div>
+                        <h3 class="product-title">AeroSteel Minimalist Chronograph Watch</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.9 (512 reviews)</span>
+                        </div>
+                        <div class="product-pricing">
+                            <span class="current-price">₹6,499</span>
+                            <span class="original-price">₹7,999</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-sm" onclick="addToCart('AeroSteel Chronograph Watch', 6499)">Add to Cart</button>
+                            <button class="btn btn-outline-dark btn-sm" onclick="showProductDetails('AeroSteel Chronograph Watch', 'Accessories', 6499, 'Sapphire glass crystal with 50m water resistance and Japanese quartz movement.')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card" data-category="Home Essentials">
+                    <div class="product-image-wrap">
+                        <span class="product-graphic">☕</span>
+                        <div class="product-badge-wrap">
+                            <span class="badge badge-sale">BEST VALUE</span>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-category">Home Essentials</div>
+                        <h3 class="product-title">Ceramic Artisan Pour-Over Coffee Brewer</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span>4.7 (245 reviews)</span>
+                        </div>
+                        <div class="product-pricing">
+                            <span class="current-price">₹1,899</span>
+                            <span class="original-price">₹2,499</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-sm" onclick="addToCart('Ceramic Pour-Over Coffee Set', 1899)">Add to Cart</button>
+                            <button class="btn btn-outline-dark btn-sm" onclick="showProductDetails('Ceramic Pour-Over Coffee Set', 'Home Essentials', 1899, 'Double-walled heat-resistant matte ceramic with reusable stainless-steel micro-mesh filter.')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card" data-category="Beauty & Personal Care">
+                    <div class="product-image-wrap">
+                        <span class="product-graphic">🧴</span>
+                        <div class="product-badge-wrap">
+                            <span class="badge badge-sale">ORGANIC</span>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-category">Beauty & Care</div>
+                        <h3 class="product-title">Botanical Glow Daily Hydration Complex</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.8 (190 reviews)</span>
+                        </div>
+                        <div class="product-pricing">
+                            <span class="current-price">₹2,199</span>
+                            <span class="original-price">₹2,800</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-sm" onclick="addToCart('Botanical Hydration Complex', 2199)">Add to Cart</button>
+                            <button class="btn btn-outline-dark btn-sm" onclick="showProductDetails('Botanical Hydration Complex', 'Beauty & Personal Care', 2199, 'Enriched with plant squalane, hyaluronic acid, and cold-pressed botanical oils.')">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-card" data-category="Books">
+                    <div class="product-image-wrap">
+                        <span class="product-graphic">📖</span>
+                        <div class="product-badge-wrap">
+                            <span class="badge badge-sale">EDITOR CHOICE</span>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-category">Books</div>
+                        <h3 class="product-title">Modern Architecture & Contemporary Spaces</h3>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span>4.9 (420 reviews)</span>
+                        </div>
+                        <div class="product-pricing">
+                            <span class="current-price">₹1,450</span>
+                            <span class="original-price">₹1,999</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-sm" onclick="addToCart('Modern Architecture Anthology', 1450)">Add to Cart</button>
+                            <button class="btn btn-outline-dark btn-sm" onclick="showProductDetails('Modern Architecture Anthology', 'Books', 1450, 'A deluxe coffee-table hardcover edition celebrating iconic structural innovations across 400 full-color pages.')">Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose PondyCollect -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Company Pillars</span>
+                <h2 class="section-title">Why Choose PondyCollect?</h2>
+                <p class="section-desc">We combine customer-first service with curated product selections and dependable e-commerce technology.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-box">🛡️</div>
+                    <h3 class="feature-title">Trusted Shopping</h3>
+                    <p class="feature-desc">All products are sourced directly from verified manufacturers and tested for high standard reliability.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-box">✨</div>
+                    <h3 class="feature-title">Quality Products</h3>
+                    <p class="feature-desc">Rigorous quality inspection ensures premium materials, authentic specifications, and total peace of mind.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-box">🔒</div>
+                    <h3 class="feature-title">Secure Experience</h3>
+                    <p class="feature-desc">Protected user accounts, bcrypt password encryption, and enterprise session security standards.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-box">⚡</div>
+                    <h3 class="feature-title">Fast Delivery</h3>
+                    <p class="feature-desc">Rapid fulfillment network delivering orders seamlessly with real-time tracking across destinations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic & Enterprise Portal Access Banner -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div style="background: linear-gradient(135deg, var(--primary) 0%, #1E293B 100%); border-radius: var(--radius-lg); padding: 3rem; color: #FFFFFF; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+                <div>
+                    <span class="badge" style="background-color: rgba(245, 158, 11, 0.2); color: #F59E0B; border: 1px solid rgba(245, 158, 11, 0.4); margin-bottom: 1rem;">
+                        Internal Management System
+                    </span>
+                    <h2 style="font-size: 1.85rem; font-weight: 800; margin-bottom: 0.5rem;">PondyCollect Staff & Admin Portal</h2>
+                    <p style="color: #CBD5E1; max-width: 600px; font-size: 0.95rem;">
+                        Registered employees and company administrators can sign in to view role-specific profiles, cross-department staff directories, and live organizational stats.
+                    </p>
+                </div>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="login.html" class="btn btn-primary" id="cta-portal-login">Staff Login</a>
+                    <a href="register.html" class="btn btn-outline" id="cta-portal-register">Register Account</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-top">
+            <div class="footer-grid">
+                <div>
+                    <div class="brand-logo" style="margin-bottom: 0.5rem;">
+                        <div class="brand-icon">🛍️</div>
+                        <div class="brand-name">Pondy<span>Collect</span></div>
+                    </div>
+                    <p class="footer-brand-desc">
+                        PondyCollect is an online item-selling marketplace company dedicated to modern lifestyle, electronics, fashion, and accessories.
+                    </p>
+                    <p style="font-size: 0.8rem; color: #64748B;">
+                        MCA Internet & Web Technologies Lab Project Demonstration
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Marketplace</h4>
+                    <ul class="footer-links">
+                        <li><a href="#shop">Featured Collection</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#about">Company Pillars</a></li>
+                        <li><a href="register.html">Become a Member</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Internal Portal</h4>
+                    <ul class="footer-links">
+                        <li><a href="login.html">Employee Login</a></li>
+                        <li><a href="login.html">Administrator Login</a></li>
+                        <li><a href="register.html">Staff Registration</a></li>
+                        <li><a href="login.html">Session Portal</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Customer Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:support@pondycollect.com">support@pondycollect.com</a></li>
+                        <li><a href="#">Shipping Policy (Demo)</a></li>
+                        <li><a href="#">Return Policy (Demo)</a></li>
+                        <li><a href="#">Security & Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <div>
+                © 2026 PondyCollect Inc. "Discover More. Collect Better." All rights reserved.
+            </div>
+            <div style="color: #64748B;">
+                Designed for MCA Internet and Web Technologies (IWT) Lab
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

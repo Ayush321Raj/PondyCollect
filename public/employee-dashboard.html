@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Portal — PondyCollect</title>
+    <meta name="description" content="PondyCollect Employee Portal and Administrator Directory.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Site Header with Logout -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand-logo">
+                <div class="brand-icon">🛍️</div>
+                <div class="brand-name">Pondy<span>Collect</span></div>
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Storefront</a></li>
+                    <li><a href="employee-dashboard.html" class="nav-link active">Staff Dashboard</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="btn btn-outline btn-sm" id="logout-btn" onclick="handleLogout()">
+                    🚪 Sign Out
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub-header Greeting Bar -->
+    <div class="dashboard-header-bar">
+        <div class="container dashboard-header-inner">
+            <div class="dashboard-user-greeting">
+                <div class="user-avatar-circle" id="user-avatar-letter">E</div>
+                <div class="user-greeting-text">
+                    <h1 id="user-display-name">Welcome, Employee</h1>
+                    <p id="user-display-email">Loading profile data...</p>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <span class="badge badge-employee" id="user-role-badge">STAFF EMPLOYEE</span>
+                <span class="badge badge-active">SESSION ACTIVE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard Container -->
+    <main class="container" style="flex-grow: 1;">
+        <!-- Employee Profile Card -->
+        <section class="profile-card">
+            <div class="profile-header">
+                <div class="profile-title">
+                    <span>📋</span> My Employee Profile
+                </div>
+                <span class="badge badge-employee">Verified Employee</span>
+            </div>
+
+            <div class="profile-grid">
+                <div>
+                    <div class="profile-field-label">Full Name</div>
+                    <div class="profile-field-value" id="profile-name">—</div>
+                </div>
+
+                <div>
+                    <div class="profile-field-label">Email Address</div>
+                    <div class="profile-field-value" id="profile-email">—</div>
+                </div>
+
+                <div>
+                    <div class="profile-field-label">Department</div>
+                    <div class="profile-field-value" id="profile-department">—</div>
+                </div>
+
+                <div>
+                    <div class="profile-field-label">Designation</div>
+                    <div class="profile-field-value" id="profile-designation">—</div>
+                </div>
+
+                <div>
+                    <div class="profile-field-label">Contact Phone</div>
+                    <div class="profile-field-value" id="profile-phone">—</div>
+                </div>
+
+                <div>
+                    <div class="profile-field-label">Registered On</div>
+                    <div class="profile-field-value" id="profile-created">—</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registered Administrators Directory Section -->
+        <section class="directory-section">
+            <div class="directory-header">
+                <div class="directory-title-wrap">
+                    <h2>Company Administrators Directory</h2>
+                    <p>Contact points for operational, administrative, and system escalations</p>
+                </div>
+                <input type="text" id="directory-search" class="directory-search" placeholder="🔍 Search administrators..." oninput="filterDirectory()">
+            </div>
+
+            <div class="table-responsive">
+                <table class="custom-table" id="directory-table">
+                    <thead>
+                        <tr>
+                            <th>Administrator Name</th>
+                            <th>Official Email</th>
+                            <th>Department</th>
+                            <th>Designation</th>
+                            <th>Direct Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody id="directory-tbody">
+                        <tr>
+                            <td colspan="5" style="text-align: center; padding: 2rem; color: var(--text-secondary);">
+                                Fetching administrator records from MySQL database...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Empty State Container -->
+            <div class="empty-state" id="empty-state" style="display: none;">
+                <div class="empty-icon">📭</div>
+                <h3>No Administrators Found</h3>
+                <p>No administrative records matched your search criteria.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-bottom" style="border: none;">
+            <div>© 2026 PondyCollect Inc. — Employee Dashboard (IWT Lab)</div>
+            <div>Database-driven Role-Based System</div>
+        </div>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initDashboard('employee');
+        });
+    </script>
+</body>
+</html>
